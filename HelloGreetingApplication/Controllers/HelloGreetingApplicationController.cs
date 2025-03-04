@@ -1,3 +1,4 @@
+using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
@@ -13,6 +14,22 @@ namespace HelloGreetingApplication.Controllers;
 [Route("[controller]")]
 public class HelloGreetingApplicationController : ControllerBase
 {
+    IGreetingBL _greetingBL;
+
+    public HelloGreetingApplicationController(IGreetingBL greetingBL)
+    {
+        _greetingBL = greetingBL;
+    }
+
+    [HttpGet("custom")]
+
+    public IActionResult GreetingMessage()
+    {
+        string result = _greetingBL.GreetingMessage();
+        return Ok(result);
+    }
+
+
 
     private Logger logger = LogManager.GetCurrentClassLogger();
     /// <summary>
