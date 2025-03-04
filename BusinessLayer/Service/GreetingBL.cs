@@ -9,9 +9,26 @@ namespace BusinessLayer.Service
 {
     public class GreetingBL : IGreetingBL
     {
-        public string GreetingMessage()
+        public string GreetingMessage(string? firstName, string? lastName)
         {
-            return "HelloWorld";
+            if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
+            {
+                return "Hello " + firstName + " " + lastName;
+            }
+
+            else if (!string.IsNullOrEmpty(firstName))
+            {
+                return "Hello " + firstName;
+            }
+            else if (!string.IsNullOrEmpty(lastName))
+            {
+                return "Hello " + lastName;
+            }
+            else
+            {
+                return "Hello World!";
+            }
+                    
         }
     }
 }
