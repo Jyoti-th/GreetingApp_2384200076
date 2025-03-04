@@ -5,6 +5,18 @@
     "version": "1.0"
   },
   "paths": {
+    "/HelloGreetingApplication/custom": {
+      "get": {
+        "tags": [
+          "HelloGreetingApplication"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/HelloGreetingApplication": {
       "get": {
         "tags": [

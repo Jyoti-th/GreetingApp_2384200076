@@ -72,5 +72,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingApplicationController",
+    "Method": "GreetingMessage",
+    "RelativePath": "HelloGreetingApplication/custom",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
