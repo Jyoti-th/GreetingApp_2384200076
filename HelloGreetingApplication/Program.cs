@@ -1,5 +1,6 @@
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
+using NLog;
 using NLog.Web;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IGreetingBL, GreetingBL>();
+
+var logger = LogManager.Setup()
+    .LoadConfigurationFromFile(Path.Combine(Directory.GetCurrentDirectory(), "NLog.config"))
+    .GetCurrentClassLogger();
 
 builder.Host.UseNLog();
 

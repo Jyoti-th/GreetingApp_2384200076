@@ -14,6 +14,9 @@ namespace HelloGreetingApplication.Controllers;
 [Route("[controller]")]
 public class HelloGreetingApplicationController : ControllerBase
 {
+
+    private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+
     IGreetingBL _greetingBL;
 
     public HelloGreetingApplicationController(IGreetingBL greetingBL)
@@ -22,16 +25,17 @@ public class HelloGreetingApplicationController : ControllerBase
     }
 
     [HttpGet("custom")]
-
-    public IActionResult GreetingMessage()
+    public IActionResult GreetingMessage(string? firstName, string? lastName)
     {
-        string result = _greetingBL.GreetingMessage();
-        return Ok(result);
+        string result = _greetingBL.GreetingMessage(firstName, lastName);
+        ResponseModel<string> responseModel = new ResponseModel<string>();
+        responseModel.Success = true;
+        responseModel.Message = "Greeting Message Executed";
+        responseModel.Data = result;
+        logger.Info($"Greeting fetched {result}");
+        return Ok(responseModel);
     }
 
-
-
-    private Logger logger = LogManager.GetCurrentClassLogger();
     /// <summary>
     /// Get method to get the Greeting message
     /// </summary>

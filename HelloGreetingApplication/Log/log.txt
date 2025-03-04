@@ -1,31 +1,46 @@
-2025-03-03 23:52:18.7183 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7224 
-2025-03-03 23:52:20.1497 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5186 
-2025-03-03 23:52:22.0062 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
-2025-03-03 23:52:23.0099 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
-2025-03-03 23:52:23.0323 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Users\JYOTI THAKUR\source\repos\HelloGreetingApplication\HelloGreetingApplication\ 
-2025-03-03 23:52:23.2430 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/Swagger/index.html - - 
-2025-03-03 23:52:24.7343 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/Swagger/index.html - - - 200 - text/html;charset=utf-8 1497.5040ms 
-2025-03-03 23:52:24.8603 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/_framework/aspnetcore-browser-refresh.js - - 
-2025-03-03 23:52:24.9890 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/_vs/browserLink - - 
-2025-03-03 23:52:24.9890 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/Swagger/index.js - - 
-2025-03-03 23:52:25.0020 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 11.0287ms 
-2025-03-03 23:52:25.0020 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/_framework/aspnetcore-browser-refresh.js - - - 200 12006 application/javascript;+charset=utf-8 142.1982ms 
-2025-03-03 23:52:25.4724 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 483.4037ms 
-2025-03-03 23:52:25.9447 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/Swagger/v1/swagger.json - - 
-2025-03-03 23:52:26.0185 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 74.1977ms 
-2025-03-03 23:52:52.9766 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/HelloGreetingApplication - - 
-2025-03-03 23:52:52.9860 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.Get (HelloGreetingApplication)' 
-2025-03-03 23:52:53.0075 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Get", controller = "HelloGreetingApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller HelloGreetingApplication.Controllers.HelloGreetingApplicationController (HelloGreetingApplication). 
-2025-03-03 23:52:53.0463 | INFO | HelloGreetingApplication.Controllers.HelloGreetingApplicationController | Get method executed 
-2025-03-03 23:52:53.0636 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
-2025-03-03 23:52:53.0813 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingApplicationController.Get (HelloGreetingApplication) in 60.1827ms 
-2025-03-03 23:52:53.0813 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.Get (HelloGreetingApplication)' 
-2025-03-03 23:52:53.0813 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/HelloGreetingApplication - - - 200 - application/json;+charset=utf-8 106.1720ms 
-2025-03-03 23:53:17.9259 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7224/HelloGreetingApplication application/json 47 
-2025-03-03 23:53:17.9310 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.Get (HelloGreetingApplication)' 
-2025-03-03 23:53:17.9310 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Get", controller = "HelloGreetingApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller HelloGreetingApplication.Controllers.HelloGreetingApplicationController (HelloGreetingApplication). 
-2025-03-03 23:53:17.9310 | INFO | HelloGreetingApplication.Controllers.HelloGreetingApplicationController | Get method executed 
-2025-03-03 23:53:17.9310 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
-2025-03-03 23:53:17.9633 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingApplicationController.Get (HelloGreetingApplication) in 29.6048ms 
-2025-03-03 23:53:17.9633 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.Get (HelloGreetingApplication)' 
-2025-03-03 23:53:17.9633 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7224/HelloGreetingApplication application/json 47 - 200 - application/json;+charset=utf-8 39.8718ms 
+2025-03-04 15:46:33.8744 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7224 
+2025-03-04 15:46:33.9362 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5186 
+2025-03-04 15:46:34.0355 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-04 15:46:34.0405 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-04 15:46:34.0405 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Users\JYOTI THAKUR\Desktop\GreetinApp1\GreetingApp_2384200076\HelloGreetingApplication\ 
+2025-03-04 15:46:35.9772 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/Swagger/index.html - - 
+2025-03-04 15:46:37.7403 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/Swagger/index.html - - - 200 - text/html;charset=utf-8 1768.4129ms 
+2025-03-04 15:46:37.9676 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-04 15:46:37.9676 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/Swagger/index.js - - 
+2025-03-04 15:46:37.9676 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/_vs/browserLink - - 
+2025-03-04 15:46:37.9676 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 7.5324ms 
+2025-03-04 15:46:37.9897 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/_framework/aspnetcore-browser-refresh.js - - - 200 12006 application/javascript;+charset=utf-8 22.0924ms 
+2025-03-04 15:46:38.4046 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 435.3840ms 
+2025-03-04 15:46:38.5636 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/Swagger/v1/swagger.json - - 
+2025-03-04 15:46:38.5963 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 32.7276ms 
+2025-03-04 15:47:06.7942 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/HelloGreetingApplication/custom - - 
+2025-03-04 15:47:06.8072 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.GreetingMessage (HelloGreetingApplication)' 
+2025-03-04 15:47:06.8775 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GreetingMessage", controller = "HelloGreetingApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GreetingMessage(System.String, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingApplicationController (HelloGreetingApplication). 
+2025-03-04 15:47:06.9905 | INFO | HelloGreetingApplication.Controllers.HelloGreetingApplicationController | Greeting fetched Hello World! 
+2025-03-04 15:47:07.0080 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-04 15:47:07.0240 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingApplicationController.GreetingMessage (HelloGreetingApplication) in 134.4137ms 
+2025-03-04 15:47:07.0240 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.GreetingMessage (HelloGreetingApplication)' 
+2025-03-04 15:47:07.0240 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/HelloGreetingApplication/custom - - - 200 - application/json;+charset=utf-8 231.7962ms 
+2025-03-04 15:47:57.9546 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7224 
+2025-03-04 15:47:58.1251 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5186 
+2025-03-04 15:47:59.0170 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-04 15:47:59.0712 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-04 15:47:59.2403 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Users\JYOTI THAKUR\Desktop\GreetinApp1\GreetingApp_2384200076\HelloGreetingApplication\ 
+2025-03-04 15:48:01.9135 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/Swagger/index.html - - 
+2025-03-04 15:48:03.1471 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/Swagger/index.html - - - 200 - text/html;charset=utf-8 1276.6331ms 
+2025-03-04 15:48:03.3835 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-04 15:48:03.4170 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/_vs/browserLink - - 
+2025-03-04 15:48:03.4012 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/Swagger/index.js - - 
+2025-03-04 15:48:03.4326 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 31.3093ms 
+2025-03-04 15:48:03.4545 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/_framework/aspnetcore-browser-refresh.js - - - 200 12006 application/javascript;+charset=utf-8 70.9755ms 
+2025-03-04 15:48:03.5691 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 152.1174ms 
+2025-03-04 15:48:03.7221 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/Swagger/v1/swagger.json - - 
+2025-03-04 15:48:03.7483 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 26.1744ms 
+2025-03-04 15:48:16.6340 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7224/HelloGreetingApplication/custom - - 
+2025-03-04 15:48:16.6340 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.GreetingMessage (HelloGreetingApplication)' 
+2025-03-04 15:48:16.7046 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GreetingMessage", controller = "HelloGreetingApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GreetingMessage(System.String, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingApplicationController (HelloGreetingApplication). 
+2025-03-04 15:48:16.7484 | INFO | HelloGreetingApplication.Controllers.HelloGreetingApplicationController | Greeting fetched Hello World! 
+2025-03-04 15:48:16.7672 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-04 15:48:16.7820 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingApplicationController.GreetingMessage (HelloGreetingApplication) in 67.6257ms 
+2025-03-04 15:48:16.7820 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.GreetingMessage (HelloGreetingApplication)' 
+2025-03-04 15:48:16.7820 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7224/HelloGreetingApplication/custom - - - 200 - application/json;+charset=utf-8 149.2527ms 
