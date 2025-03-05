@@ -19,6 +19,23 @@ namespace RepositoryLayer.Service
             _dbContext = dbContext;
         }
 
+
+        //UC8 method to delete id
+        public bool DeleteGreeting(int id)
+        {
+            var result = _dbContext.Greetings.FirstOrDefault(g => g.Id == id);
+
+            if (result != null)
+            {
+                _dbContext.Greetings.Remove(result); 
+                _dbContext.SaveChanges(); 
+                return true; 
+            }
+
+            return false; 
+        }
+
+
         //UC7 method to update database
         public UserEntity UpdateGreeting(int id, string newMessage)
         {
