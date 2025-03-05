@@ -18,6 +18,14 @@ namespace BusinessLayer.Service
             _greetingRL = greetingRL;
         }
 
+        //UC5 method 
+        public UserEntity GetGreetingById(int id)
+        {
+           var result = _greetingRL.GetGreetingById(id);
+            return result;
+        }
+
+        //UC4 method
         public UserEntity SaveGreetings(string message)
         {
             var result = _greetingRL.SaveGreetings(message);
