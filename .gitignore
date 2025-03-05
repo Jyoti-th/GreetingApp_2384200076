@@ -1,8 +1,16 @@
 
 .vs
 obj/
+<<<<<<< HEAD
 bin/
+=======
+>>>>>>> UC6
 *.dll
 *.pdb
 *.cache
 log.txt
+bin/
+obj/
+*.dll
+*.pdb
+*.cache

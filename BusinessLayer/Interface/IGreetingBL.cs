@@ -14,6 +14,8 @@ namespace BusinessLayer.Interface
         public UserEntity GetGreetingById(int id);
 
         public string GreetingMessage(string? firstName, string? lastName);
-        
+
+        public List<UserEntity> GetAllGreetings();
+
     }
 }

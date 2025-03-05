@@ -19,6 +19,13 @@ namespace RepositoryLayer.Service
             _dbContext = dbContext;
         }
 
+        //UC6 method To Get All messages
+        public List<UserEntity> GetAllGreetings()
+        {
+            var result = _dbContext.Greetings.ToList();
+            return result ?? new List<UserEntity>();
+        }
+
         public UserEntity SaveGreetings(string message)
         {
             var greeting = new UserEntity { Message = message };
