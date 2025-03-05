@@ -18,6 +18,15 @@ namespace BusinessLayer.Service
             _greetingRL = greetingRL;
         }
 
+        //UC7  method
+        public UserEntity UpdateGreeting(int id, string newMessage)
+        {
+            var result = _greetingRL.UpdateGreeting(id, newMessage);
+            return result;
+        }
+
+
+
         //UC6 method 
         public List<UserEntity> GetAllGreetings()
         {
