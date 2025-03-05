@@ -10,6 +10,9 @@ namespace BusinessLayer.Interface
     public interface IGreetingBL
     {
         UserEntity SaveGreetings(string message);
+
+        public UserEntity GetGreetingById(int id);
+
         public string GreetingMessage(string? firstName, string? lastName);
         
     }

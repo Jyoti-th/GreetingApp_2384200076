@@ -28,6 +28,24 @@ public class HelloGreetingApplicationController : ControllerBase
         _greetingBL = greetingBL;
     }
 
+    [HttpGet("FindGreeting")]
+    public IActionResult GetGreetingById(int id)
+    {
+        var result = _greetingBL.GetGreetingById(id);
+
+        if (result == null)
+        {
+            return NotFound("Greeting not found!" );
+        }
+        ResponseModel<UserEntity> responseModel = new ResponseModel<UserEntity>();
+        responseModel.Success = true;
+        responseModel.Message = "Greeting fetched successfully!";
+        responseModel.Data = result;
+        logger.Info($"Greeting fetched : {result.Message}");
+        return Ok(responseModel);
+    }
+
+
     [HttpGet("custom")]
     public IActionResult GreetingMessage(string? firstName, string? lastName)
     {

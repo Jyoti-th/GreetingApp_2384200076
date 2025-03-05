@@ -27,5 +27,10 @@ namespace RepositoryLayer.Service
             return greeting;  
         }
 
+        public UserEntity GetGreetingById(int id)
+        {
+            return _dbContext.Greetings.FirstOrDefault(g => g.Id == id);
+        }
+
     }
 }
