@@ -2,6 +2,10 @@ using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
+using RepositoryLayer.Entity;
+using RepositoryLayer;
+using Microsoft.EntityFrameworkCore;
+using BusinessLayer.Service;
 
 
 namespace HelloGreetingApplication.Controllers;
@@ -63,6 +67,22 @@ public class HelloGreetingApplicationController : ControllerBase
 
     }
 
+    [HttpPost("SaveGreeting")]
+    public IActionResult SaveGreetings(string message)
+    {
+        var result = _greetingBL.SaveGreetings(message);
+        ResponseModel<UserEntity> responseModel = new ResponseModel<UserEntity>();
+        responseModel.Success = true;
+        responseModel.Message = "Greeting saved successfully!";
+        responseModel.Data = result;
+        logger.Info($"Greeting saved: {result.Message}");
+
+        return Ok(responseModel);
+
+    }
+
+    
+
     /// <summary>
     /// Put method to update a resource
     /// </summary>
@@ -101,5 +121,7 @@ public class HelloGreetingApplicationController : ControllerBase
         logger.Info("Deleted method executed");
         return Ok(responseModel);
     }
+
+    
 
 }
