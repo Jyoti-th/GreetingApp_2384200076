@@ -28,6 +28,21 @@ public class HelloGreetingApplicationController : ControllerBase
         _greetingBL = greetingBL;
     }
 
+
+    [HttpGet("GetAllGreetings")]
+    public IActionResult GetAllGreetings()
+    {
+        var result = _greetingBL.GetAllGreetings();
+        ResponseModel<List<UserEntity>> responseModel = new ResponseModel<List<UserEntity>>();
+        responseModel.Success = true;
+        responseModel.Message = "All Greetings fetched successfully!";
+        responseModel.Data = result;
+        logger.Info($"Greetings fetched");
+        return Ok(responseModel);
+    }
+
+
+
     [HttpGet("FindGreeting")]
     public IActionResult GetGreetingById(int id)
     {
