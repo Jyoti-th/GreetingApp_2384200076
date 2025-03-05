@@ -17,5 +17,6 @@ namespace BusinessLayer.Interface
 
         public List<UserEntity> GetAllGreetings();
 
+        public UserEntity UpdateGreeting(int id, string newMessage);
     }
 }

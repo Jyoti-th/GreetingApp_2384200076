@@ -19,6 +19,24 @@ namespace RepositoryLayer.Service
             _dbContext = dbContext;
         }
 
+        //UC7 method to update database
+        public UserEntity UpdateGreeting(int id, string newMessage)
+        {
+            var greeting = _dbContext.Greetings.FirstOrDefault(g => g.Id == id);
+
+            if (greeting != null)
+            {
+                greeting.Message = newMessage; 
+                _dbContext.SaveChanges(); 
+                return greeting; 
+            }
+
+            return null; 
+        }
+
+
+
+
         //UC6 method To Get All messages
         public List<UserEntity> GetAllGreetings()
         {
