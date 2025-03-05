@@ -18,6 +18,14 @@ namespace BusinessLayer.Service
             _greetingRL = greetingRL;
         }
 
+
+        //UC8 method
+        public bool DeleteGreeting(int id)
+        {
+            var result = _greetingRL.DeleteGreeting(id);
+            return result;
+        }
+
         //UC7  method
         public UserEntity UpdateGreeting(int id, string newMessage)
         {
