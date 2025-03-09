@@ -1,6 +1,7 @@
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
 using NLog;
 using NLog.Web;
 using RepositoryLayer.Context;
@@ -32,6 +33,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Register Exception Middleware
+app.UseMiddleware<HelloGreetingApplication.Middleware.ExceptionMiddleware>();
 app.UseSwagger();
 
 app.UseSwaggerUI();
