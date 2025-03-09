@@ -12,8 +12,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+// ?? Register Business & Repository Layer for Dependency Injection
 builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 builder.Services.AddScoped<IGreetingRL, GreetingRL>();
+builder.Services.AddScoped<IUserBL, UserBL>();  // ? Business Layer
+builder.Services.AddScoped<IUserRL, UserRL>();  // ? Repository Layer
+
 
 var logger = LogManager.Setup()
     .LoadConfigurationFromFile(Path.Combine(Directory.GetCurrentDirectory(), "NLog.config"))

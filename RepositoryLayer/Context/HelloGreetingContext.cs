@@ -13,5 +13,16 @@ namespace RepositoryLayer.Context
         public HelloGreetingContext(DbContextOptions<HelloGreetingContext> options) : base(options) { }
 
         public DbSet<UserEntity> Greetings { get; set; }
+        public DbSet<UserDetailsEntity> Users { get; set; }  // ✅ New Users Table
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // ✅ Ensure Email is Unique for UserDetailsEntity
+            modelBuilder.Entity<UserDetailsEntity>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+        }
     }
 }
