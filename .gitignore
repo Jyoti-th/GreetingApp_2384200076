@@ -4,3 +4,4 @@ obj/
 *.pdb
 *.cache
 log.txt
+.bin

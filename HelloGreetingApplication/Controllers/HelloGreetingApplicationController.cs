@@ -89,7 +89,7 @@ public class HelloGreetingApplicationController : ControllerBase
 
         if (result == null)
         {
-            return NotFound("Greeting not found!" );
+            return NotFound("Greeting not found!");
         }
         ResponseModel<UserEntity> responseModel = new ResponseModel<UserEntity>();
         responseModel.Success = true;
@@ -194,6 +194,12 @@ public class HelloGreetingApplicationController : ControllerBase
         return Ok(responseModel);
     }
 
-    
+    [HttpGet("TestException")]
+    public IActionResult TestException()
+    {
+        throw new Exception("This is a test exception!");
+    }
+
+
 
 }
