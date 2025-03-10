@@ -87,46 +87,46 @@ namespace RepositoryLayer.Service
             }
         }
 
-        // ✅ Generate Password Reset Token (Simple GUID Token)
-        public string GeneratePasswordResetToken(string email)
-        {
-            var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
-            if (user == null)
-            {
-                return null;
-            }
+//        // ✅ Generate Password Reset Token (Simple GUID Token)
+//        public string GeneratePasswordResetToken(string email)
+//        {
+//            var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
+//            if (user == null)
+//            {
+//                return null;
+//            }
 
-            // Generate Token (GUID)
-            string resetToken = Guid.NewGuid().ToString();
-            user.ResetToken = resetToken;
-            user.ResetTokenExpiry = DateTime.UtcNow.AddMinutes(30); // Token valid for 30 minutes
+//            // Generate Token (GUID)
+//            string resetToken = Guid.NewGuid().ToString();
+//            user.ResetToken = resetToken;
+//            user.ResetTokenExpiry = DateTime.UtcNow.AddMinutes(30); // Token valid for 30 minutes
 
-            _dbContext.SaveChanges();
-            return resetToken;
-        }
+//            _dbContext.SaveChanges();
+//            return resetToken;
+//        }
 
-        // ✅ Reset Password
-        public bool ResetPassword(ResetPasswordModel model)
-        {
-            var user = _dbContext.Users.FirstOrDefault(u => u.Email == model.Email && u.ResetToken == model.Token);
-            if (user == null || user.ResetTokenExpiry < DateTime.UtcNow)
-            {
-                return false; // Token invalid or expired
-            }
+//        // ✅ Reset Password
+//        public bool ResetPassword(ResetPasswordModel model)
+//        {
+//            var user = _dbContext.Users.FirstOrDefault(u => u.Email == model.Email && u.ResetToken == model.Token);
+//            if (user == null || user.ResetTokenExpiry < DateTime.UtcNow)
+//            {
+//                return false; // Token invalid or expired
+//            }
 
-            // Hash new password
-            string salt = GenerateSalt();
-            string hashedPassword = HashPassword(model.NewPassword, salt);
+//            // Hash new password
+//            string salt = GenerateSalt();
+//            string hashedPassword = HashPassword(model.NewPassword, salt);
 
-            // Update Password
-            user.PasswordHash = hashedPassword;
-            user.Salt = salt;
-            user.ResetToken = null;
-            user.ResetTokenExpiry = null;
+//            // Update Password
+//            user.PasswordHash = hashedPassword;
+//            user.Salt = salt;
+//            user.ResetToken = null;
+//            user.ResetTokenExpiry = null;
 
-            _dbContext.SaveChanges();
-            return true;
-        }
+//            _dbContext.SaveChanges();
+//            return true;
+//        }
 
 
     }

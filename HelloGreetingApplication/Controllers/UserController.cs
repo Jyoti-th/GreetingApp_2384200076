@@ -1,7 +1,10 @@
 ﻿using BusinessLayer.Interface;
+using BusinessLayer.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model.UserModels;
+using RepositoryLayer.Entity;
 
 namespace HelloGreetingApplication.Controllers
 {
@@ -9,11 +12,13 @@ namespace HelloGreetingApplication.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly JwtService _jwtService;
         private readonly IUserBL _userBL;  // ✅ Business Layer Dependency
 
-        public UserController(IUserBL userBL)
+        public UserController(IUserBL userBL, JwtService jwtService)
         {
             _userBL = userBL;
+            _jwtService = jwtService;
         }
 
         // ✅ User Registration API
@@ -37,8 +42,12 @@ namespace HelloGreetingApplication.Controllers
         {
             try
             {
-                var user = _userBL.Login(model);  // ✅ Calling Business Layer
-                return Ok(new { message = "Login successful!", user });
+                var user = _userBL.Login(model);
+                if (user == null)
+                    return Unauthorized(new { message = "Invalid credentials" });
+
+                var token = _jwtService.GenerateToken(user.Email);
+                return Ok(new { message = "Login successful!", Token = token });
             }
             catch (Exception ex)
             {
@@ -47,7 +56,8 @@ namespace HelloGreetingApplication.Controllers
         }
 
 
-        [HttpPost("forgot-password")]
+
+        /*[HttpPost("forgot-password")]
         public IActionResult ForgotPassword([FromBody] ForgetPasswordModel model)
         {
             try
@@ -65,9 +75,9 @@ namespace HelloGreetingApplication.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
-        }
+        }*/
 
-        [HttpPost("reset-password")]
+        /*[HttpPost("reset-password")]
         public IActionResult ResetPassword([FromBody] ResetPasswordModel model)
         {
             try
@@ -84,6 +94,13 @@ namespace HelloGreetingApplication.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
+        }*/
+
+        [HttpGet("protected")]
+        [Authorize]  // ✅ Sirf JWT token wale users access kar sakenge
+        public IActionResult GetProtectedData()
+        {
+            return Ok(new { message = "You accessed a protected API!" });
         }
     }
 }
