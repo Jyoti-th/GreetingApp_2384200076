@@ -23,25 +23,25 @@ namespace BusinessLayer.Service
         public UserDetailsEntity Register(RegisterModel model)
         {
             return _userRL.Register(model);
-        }
+        }   
 
         // ✅ Login API
-        public string Login(LoginModel model)
+        public UserDetailsEntity Login(LoginModel model)
         {
             var user = _userRL.Login(model);
-            return "Login successful!";  // (JWT baad me implement hoga)
+            return user;  // (JWT baad me implement hoga)
         }
 
-        // ✅ Generate Reset Password Token
-        public string GeneratePasswordResetToken(string email)
-        {
-            return _userRL.GeneratePasswordResetToken(email);
-        }
+        //// ✅ Generate Reset Password Token
+        //public string GeneratePasswordResetToken(string email)
+        //{
+        //    return _userRL.GeneratePasswordResetToken(email);
+        //}
 
-        // ✅ Reset Password
-        public bool ResetPassword(ResetPasswordModel model)
-        {
-            return _userRL.ResetPassword(model);
-        }
+        //// ✅ Reset Password
+        //public bool ResetPassword(ResetPasswordModel model)
+        //{
+        //    return _userRL.ResetPassword(model);
+        //}
     }
 }
